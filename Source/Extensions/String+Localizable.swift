@@ -72,8 +72,8 @@ extension String: Localizable {
 
      - returns: A localized plural version of the string designated by `key`. This method returns `key` when `key` not found.
      */
-    public func l10nPlural(instance: L10n = .shared, resource: String? = nil, fittingWidth: Int? = nil, _ args: CVarArg...) -> String {
-        return self.l10nPlural(instance, resource: resource, fittingWidth: fittingWidth, args: args)
+    public func l10nPlural(instance: L10n = .shared, resource: String? = nil, fittingWidth: Int? = nil, replaceArgs: Bool = true, _ args: CVarArg...) -> String {
+        return self.l10nPlural(instance, resource: resource, fittingWidth: fittingWidth, replaceArgs: replaceArgs, args: args)
     }
     
     /**
@@ -86,8 +86,8 @@ extension String: Localizable {
 
      - returns: A localized plural version of the string designated by `key`. This method returns `key` when `key` not found.
      */
-    public func l10nPlural(_ instance: L10n = .shared, resource: String? = nil, fittingWidth: Int? = nil, args: [CVarArg]) -> String {
-        return instance.plural(for: self, resource: resource, fittingWidth: fittingWidth, args: args)
+    public func l10nPlural(_ instance: L10n = .shared, resource: String? = nil, fittingWidth: Int? = nil, replaceArgs: Bool = true, args: [CVarArg]) -> String {
+        return instance.plural(for: self, resource: resource, fittingWidth: fittingWidth, replaceArgs: replaceArgs, args: args)
     }
 }
 

@@ -173,7 +173,7 @@ open class L10n {
 
      - returns: A localized plural version of the string designated by `key`. This method returns `key` when `key` not found.
      */
-    open func plural(for key: String, resource: String? = nil, fittingWidth: Int? = nil, args: [CVarArg]) -> String {
+    open func plural(for key: String, resource: String? = nil, fittingWidth: Int? = nil, replaceArgs: Bool = true, args: [CVarArg]) -> String {
         let text: String
         if self.configuration.isNonLocalized {
             text = key
@@ -188,7 +188,11 @@ open class L10n {
                 return (arg, [])
             }
             if let format = self.resource(named: resource)[key, args.map { $0.1 }, fittingWidth] {
-                text = self.string(format: format, args: args.map { $0.0 })
+                if replaceArgs {
+                    text = self.string(format: format, args: args.map { $0.0 })
+                } else {
+                    text = format
+                }
             } else {
                 self.logger?.info("L10n - Key \(key.debugDescription) does not support plural for \(self.language.debugDescription).")
                 text = key
