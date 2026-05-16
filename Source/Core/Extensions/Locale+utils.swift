@@ -10,7 +10,7 @@ import Foundation
 
 internal extension Locale {
 
-    private static let components: [(Locale) -> String?] = [
+    private static let components: [@Sendable (Locale) -> String?] = [
         { $0.languageCode },
         { $0.scriptCode },
         { $0.regionCode },

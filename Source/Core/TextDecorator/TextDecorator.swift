@@ -6,7 +6,7 @@
 //  Copyright © 2020 Adrian Bobrowski (Decybel07), adrian071993@gmail.com. All rights reserved.
 //
 
-protocol TextDecorator {
+protocol TextDecorator: Sendable {
     
     func decorate(text: String) -> String
 }

@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:6.0
 //
 //  Package.swift
 //  Created by Adrian Bobrowski on 30.04.2017.
@@ -11,7 +11,7 @@ let package = Package(
     name: "L10n-swift",
     defaultLocalization: "en",
     platforms: [
-        .macOS(.v10_10), .iOS(.v9), .tvOS(.v9), .watchOS(.v2)
+        .macOS(.v10_13), .iOS(.v12), .tvOS(.v12), .watchOS(.v4)
     ],
     products: [
         .library(name: "L10n-swift", targets: ["L10n-swift"]),
@@ -30,5 +30,5 @@ let package = Package(
 //            exclude: ["Info.plist"]
 //        ),
     ],
-    swiftLanguageVersions: [.v4, .v4_2, .v5]
+    swiftLanguageModes: [.v6]
 )

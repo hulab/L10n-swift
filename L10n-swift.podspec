@@ -24,12 +24,12 @@ Pod::Spec.new do |spec|
   spec.source           = { :git => "https://github.com/Decybel07/L10n-swift.git", :tag => spec.version }
 
   spec.frameworks = 'Foundation'
-  spec.swift_versions = ['4.0', '4.2', '5']
+  spec.swift_versions = ['6.0']
 
-  spec.ios.deployment_target = '9.0'
-  spec.watchos.deployment_target = '2.0'
-  spec.tvos.deployment_target = '9.0'
-  spec.osx.deployment_target = '10.10'
+  spec.ios.deployment_target = '12.0'
+  spec.watchos.deployment_target = '4.0'
+  spec.tvos.deployment_target = '12.0'
+  spec.osx.deployment_target = '10.13'
   
   spec.subspec 'Core' do |core|
     core.source_files = 'Source/Core/**/*.{swift,stringsdict}'

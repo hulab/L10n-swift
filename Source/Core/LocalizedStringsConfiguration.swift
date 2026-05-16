@@ -9,7 +9,7 @@
 import Foundation
 
 /// Struct LocalizedStringsConfiguration used to modification of output.
-public struct LocalizedStringsConfiguration: TextDecorator {
+public struct LocalizedStringsConfiguration: TextDecorator, Sendable {
     
     /// A shared instance of `L10n`.
     public static let shared: LocalizedStringsConfiguration = .init(userDefaults: .standard)
